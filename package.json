@@ -1,0 +1,14 @@
+{
+  "name": "test-netlify",
+  "version": "1.0.0",
+  "description": "Netlify is a github based cms",
+  "main": "index.js",
+  "scripts": {
+    "copy": "copyfiles -u 1 './src/**/*' ./dist"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "copyfiles": "^1.2.0"
+  }
+}
