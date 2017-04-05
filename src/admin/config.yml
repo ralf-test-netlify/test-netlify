@@ -7,6 +7,18 @@ media_folder: "images/uploads"
 public_folder: "images/uploads"
 
 collections:
+  - name: "video"
+    label: "Video"
+    folder: "_posts/video"
+    create: "true"
+    slug: "{{videoId}}-{{year}}-{{month}}-{{day}}"
+    fields:
+      - {label: "Type", name: "type", widget: "hidden", default: "video"}
+      - {label: "DisplayName", name: "displayName", widget: "string"}
+      - {label: "VideoId", name: "videoId", widget: "string"}
+      - {label: "Url", name: "url", widget: "string"}
+      - {label: "Duration", name: "duration", widget: "number"}
+      - {label: "Description", name: "body", widget: "markdown"}
   - name: "text-event"
     label: "TextEvent"
     folder: "_posts/event"
@@ -16,7 +28,8 @@ collections:
       - {label: "Type", name: "type", widget: "hidden", default: "textEvent"}
       - {label: "VideoId", name: "videoId", widget: "string"}
       - {label: "Time", name: "time", widget: "number"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Duration", name: "duration", widget: "number"}
+      - {label: "Body", name: "body", widget: "markdown"} # Body is a special name, it is shown as the main markdown content
   - name: "blog" # Used in routes, e.g. /admin/collections/blog
     label: "Blog" # Used in the UI
     folder: "_posts/blog" # The path to the folder where the documents are stored
