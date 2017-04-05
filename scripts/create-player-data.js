@@ -78,7 +78,7 @@ function makeEventConfig(event, index){
   return {
     id: 'e-' + index,
     type: 'text',
-    time: event.attributes.time,
+    time: parseFloat(event.attributes.time),
     duration: 2,
     content: event.body
 

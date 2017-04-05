@@ -161,11 +161,16 @@ export default class App extends React.Component {
     }
 
     function renderEventsSpreadOut(data) {
+      var events = data.events.slice();
+      events.sort(function(a,b){
+        return a.time - b.time;
+      });
+
       return (
         <div>
           <h3>Preview Spread Out</h3>
           {
-            data.events.map(e => {
+            events.map(e => {
                 return renderEventPreview(e, data.video)
               }
             )
