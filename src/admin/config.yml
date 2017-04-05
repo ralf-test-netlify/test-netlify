@@ -7,6 +7,16 @@ media_folder: "images/uploads"
 public_folder: "images/uploads"
 
 collections:
+  - name: "text-event"
+    label: "TextEvent"
+    folder: "_posts/event"
+    create: true
+    slug: "{{videoId}}-{{time}}-{{type}}"
+    fields:
+      - {label: "Type", name: "type", widget: "hidden", default: "textEvent"}
+      - {label: "VideoId", name: "videoId", widget: "string"}
+      - {label: "Time", name: "time", widget: "number"}
+      - {label: "Content", name: "content", widget: "markdown"}
   - name: "blog" # Used in routes, e.g. /admin/collections/blog
     label: "Blog" # Used in the UI
     folder: "_posts/blog" # The path to the folder where the documents are stored
