@@ -4,7 +4,8 @@
   "description": "Netlify is a github based cms",
   "main": "index.js",
   "scripts": {
-    "copy": "copyfiles -u 1 './src/**/*' ./dist"
+    "copy": "copyfiles -u 1 './src/**/*' ./dist",
+    "build": "npm run copy"
   },
   "author": "",
   "license": "ISC",
