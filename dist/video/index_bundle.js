@@ -44023,40 +44023,22 @@ module.exports = function() {
 
 module.exports = {
 	"video": "https://s3.amazonaws.com/smashcut/video/aday.mp4",
+	"videoId": "aday",
+	"videoName": "A day in summer",
 	"events": [
 		{
-			"id": "e1",
-			"time": 2,
-			"duration": 3,
+			"id": "e-0",
 			"type": "text",
-			"content": "this is the content of a text event"
+			"time": "4",
+			"duration": 2,
+			"content": "\nThis text should be shown after 4 seconds into the video-1\n"
 		},
 		{
-			"id": "e2",
-			"time": 17,
-			"type": "some type, that doesn't exist (yet)",
-			"content": "Should be displayed as json"
-		},
-		{
-			"id": "e3",
-			"time": 29,
-			"type": "quiz",
-			"title": "What's your favorite color?",
-			"quizId": "favoriteColor",
-			"options": [
-				{
-					"label": "red",
-					"value": "red"
-				},
-				{
-					"label": "green",
-					"value": "green"
-				},
-				{
-					"label": "blue",
-					"value": "blue"
-				}
-			]
+			"id": "e-1",
+			"type": "text",
+			"time": "6",
+			"duration": 2,
+			"content": "\nAnother text event at 6 seconds into video-1\n"
 		}
 	]
 };

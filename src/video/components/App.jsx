@@ -60,7 +60,7 @@ export default class App extends React.Component {
 
   render() {
     const self = this
-    const data = require('../data/smashcut-course-content.json')
+    const data = require('../data/aday.json')
     const {displayType} = self.state
 
     return data ? (
