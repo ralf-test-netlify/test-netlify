@@ -2,6 +2,7 @@
 id: aday-2
 version: 1.0.0
 title: This is another day
+layout: Video
 json: |-
   {
     "video": "https://s3.amazonaws.com/smashcut/video/aday.mp4",
