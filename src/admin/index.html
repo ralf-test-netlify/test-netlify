@@ -34,12 +34,13 @@
       //editor.setTheme("ace/theme/monokai");
       //editor.getSession().setMode("ace/mode/json");
       editor.getSession().on('change', function(e){
-        console.log('ace on change', e);
-        self.props.onChange(editor.getValue())
+        console.log('ace on change', e, editor.getValue());
+        //self.props.onChange(editor.getValue())
       });
     },
 
     render: function () {
+      console.log('render', this.props.value)
       var value = this.props.value || '';
       return h('div', {id: 'editorDiv'}, value);
     }
