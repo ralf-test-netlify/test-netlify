@@ -40,10 +40,9 @@
     },
 
     componentDidUpdate: function(){
+      console.info('componentDidUpdate');
       var self = this;
-      if(!self.editor) {
-        self.editor = ace.edit('editorDiv');
-      }
+      self.editor = ace.edit('editorDiv');
       self.editor.setTheme('ace/theme/monokai');
       self.editor.getSession().setMode('ace/mode/json');
       self.editor.getSession().on('change', function(e){
