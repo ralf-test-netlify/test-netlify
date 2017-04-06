@@ -9,7 +9,8 @@ json: |-
       "ar" : [1,2,3],
       "ob" : {
           "p1" : "1",
-          "p2" : "two"        
+          "p2" : "two",
+          "p3": "the cat's fur is nice"        
       }    
   }
 ---
