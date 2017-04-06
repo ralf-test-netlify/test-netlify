@@ -5,7 +5,7 @@
   "twitter": "",
   "repository": "",
   "scripts": {
-    "copy-admin": "copyfiles -u 1 './src/admin/*' ./dist",
+    "copy-admin": "copyfiles -u 1 './src/admin/**/*' ./dist",
     "copy-data": "copyfiles -f ./_data/json/*.md ./content/video",
     "lint:js": "eslint --ignore-path .gitignore --fix .",
     "lint:css": "stylelint \"src/**/*.css\"",
