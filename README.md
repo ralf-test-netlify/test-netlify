@@ -1,27 +1,19 @@
-# Testing Netlify
+# [Phenomic](https://github.com/MoOx/phenomic) phenomic-theme-base
 
-Netlify is a github based cms.
-Basically it is a react based single page application, 
-that you add to your application at /admin 
-The admin app allows you to create/edit new content 
-This content is stored in github 
-Updating the content triggers a build and deployment
+## Install dependencies
 
-The build 
- + generates a json file from the video and event items
- + runs webpack to create the video application 
- + copies all static files to the dist folder 
- 
-The generated web page can be found here
-http://insurance-saleman-antelope-80271.netlify.com
+```sh
+npm install
+```
 
-The github repo is here
-https://github.com/ralf-test-netlify/test-netlify
+## Run development server
 
-## TODO
- + pass the config to the player instead of embedding it
- + generate player configurations for more than one video
- + automatically add links to all the videos  
- 
-  
-  
+```sh
+npm start
+```
+
+## Build for production
+
+```sh
+npm run build
+```
