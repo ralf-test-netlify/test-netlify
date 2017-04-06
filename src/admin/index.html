@@ -15,11 +15,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js"></script>
 <script>
   var AceControl = createClass({
+    displayName: 'AceControl',
     handleChange: function (e) {
+      /*
       this.props.onChange(e.target.value.split(',').map(
         function (e) {
           return e.trim()
         }));
+        */
     },
 
     componentDidMount: function(){
