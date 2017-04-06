@@ -12,5 +12,28 @@
 </head>
 <body>
 <script src="https://unpkg.com/netlify-cms@^0.3/dist/cms.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js"></script>
+<script>
+  var AceControl = createClass({
+    handleChange: function (e) {
+      this.props.onChange(e.target.value.split(',').map(
+        function (e) {
+          return e.trim()
+        }));
+    },
+
+    componentDidMount: function(){
+      console.info('componentDidMount', this.editorDiv)
+    },
+
+    render: function () {
+      var value = this.props.value;
+
+      return h('div', {ref:function(elem){this.editorDiv = elem}}, value);
+    }
+  });
+
+  CMS.registerWidget('ace', AceControl);
+</script>
 </body>
 </html>

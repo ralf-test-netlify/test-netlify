@@ -7,6 +7,14 @@ media_folder: "images/uploads"
 public_folder: "images/uploads"
 
 collections:
+  - name: "json"
+    label: "Json"
+    folder: "_data/json"
+    create: "true"
+    slug: "{{jsonId}}-{{jsonVersion}}"
+    fields:
+      - {label: "Json", name: "json", widget: "ace", default: "{}"}
+
   - name: "video"
     label: "Video"
     folder: "_data/video"
@@ -19,6 +27,7 @@ collections:
       - {label: "Url", name: "url", widget: "string"}
       - {label: "Duration", name: "duration", widget: "number"}
       - {label: "Description", name: "body", widget: "markdown"}
+
   - name: "text-event"
     label: "TextEvent"
     folder: "_data/event"
@@ -30,6 +39,7 @@ collections:
       - {label: "Time", name: "time", widget: "number"}
       - {label: "Duration", name: "duration", widget: "number"}
       - {label: "Body", name: "body", widget: "markdown"} # Body is a special name, it is shown as the main markdown content
+
   - name: "blog" # Used in routes, e.g. /admin/collections/blog
     label: "Blog" # Used in the UI
     folder: "_data/blog" # The path to the folder where the documents are stored
