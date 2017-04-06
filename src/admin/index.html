@@ -1,15 +1,15 @@
 <!doctype html>
 <html>
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport"
-      content="width=device-width, initial-scale=1.0"/>
+  <meta charset='utf-8'/>
+  <meta name='viewport'
+      content='width=device-width, initial-scale=1.0'/>
   <title>Content Manager</title>
 
-  <link rel="stylesheet"
-      href="https://unpkg.com/netlify-cms@^0.3/dist/cms.css"/>
+  <link rel='stylesheet'
+      href='https://unpkg.com/netlify-cms@^0.3/dist/cms.css'/>
 
-  <style type="text/css" media="screen">
+  <style type='text/css' media='screen'>
     #editorDiv {
       width: 400px;
       height: 400px;
@@ -18,8 +18,8 @@
 
 </head>
 <body>
-<script src="https://unpkg.com/netlify-cms@^0.3/dist/cms.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js"></script>
+<script src='https://unpkg.com/netlify-cms@^0.3/dist/cms.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js'></script>
 <script>
   var AceControl = createClass({
     displayName: 'AceControl',
@@ -30,13 +30,17 @@
     componentDidMount: function(){
       console.info('componentDidMount', document.getElementById('editorDiv'));
       var self = this;
-      var editor = ace.edit("editorDiv");
-      //editor.setTheme("ace/theme/monokai");
-      //editor.getSession().setMode("ace/mode/json");
-      editor.getSession().on('change', function(e){
-        console.log('ace on change', e, editor.getValue());
-        //self.props.onChange(editor.getValue())
+      self.editor = ace.edit('editorDiv');
+      self.editor.setTheme('ace/theme/monokai');
+      self.editor.getSession().setMode('ace/mode/json');
+      self.editor.getSession().on('change', function(e){
+        console.log('ace on change', e, self.editor.getValue());
+        self.props.onChange(self.editor.getValue())
       });
+    },
+
+    componentDidUpdate: function(){
+
     },
 
     render: function () {
