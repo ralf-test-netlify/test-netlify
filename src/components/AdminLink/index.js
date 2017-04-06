@@ -10,7 +10,7 @@ const AdminLink = () => {
         { "Admin" }
       </h2>
       <ul>
-        <li><Link to="/admin/">Goto CMS Admin Page</Link></li>
+        <li><Link to="/admin/index.html">Goto CMS Admin Page</Link></li>
       </ul>
     </div>
   )
