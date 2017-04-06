@@ -9,6 +9,13 @@
   <link rel="stylesheet"
       href="https://unpkg.com/netlify-cms@^0.3/dist/cms.css"/>
 
+  <style type="text/css" media="screen">
+    #editorDiv {
+      width: 400px;
+      height: 400px;
+    }
+  </style>
+
 </head>
 <body>
 <script src="https://unpkg.com/netlify-cms@^0.3/dist/cms.js"></script>
@@ -18,19 +25,18 @@
     displayName: 'AceControl',
     handleChange: function (e) {
       console.log('handleChange: Who is calling it?', e);
-      debugger;
     },
 
     componentDidMount: function(){
       console.info('componentDidMount', document.getElementById('editorDiv'));
       var self = this;
       var editor = ace.edit("editorDiv");
-      editor.setTheme("ace/theme/monokai");
-      editor.getSession().setMode("ace/mode/json");
+      //editor.setTheme("ace/theme/monokai");
+      //editor.getSession().setMode("ace/mode/json");
       editor.getSession().on('change', function(e){
         console.log('ace on change', e);
         self.props.onChange(e.value)
-      })
+      });
     },
 
     render: function () {
