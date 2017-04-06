@@ -40,7 +40,16 @@
     },
 
     componentDidUpdate: function(){
-
+      var self = this;
+      if(!self.editor) {
+        self.editor = ace.edit('editorDiv');
+      }
+      self.editor.setTheme('ace/theme/monokai');
+      self.editor.getSession().setMode('ace/mode/json');
+      self.editor.getSession().on('change', function(e){
+        console.log('ace on change', e, self.editor.getValue());
+        self.props.onChange(self.editor.getValue())
+      });
     },
 
     render: function () {
