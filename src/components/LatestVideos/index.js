@@ -4,8 +4,6 @@ import {Link} from "phenomic"
 
 import styles from "./index.css"
 
-const defaultNumberOfPosts = 6
-
 const LatestVideos = (props, {collection}) => {
   const latestVideos = enhanceCollection(collection, {
     filter: {layout: "Video"}
