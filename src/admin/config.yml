@@ -16,7 +16,7 @@ collections:
       - {label: "Id", name: "id", widget: "string"}
       - {label: "Version", name: "version", widget: "string"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Json", name: "json", widget: "ace", default: "{}"}
+      - {label: "Json", name: "json", widget: "object", default: "{}"}
 
   - name: "video"
     label: "Video"
