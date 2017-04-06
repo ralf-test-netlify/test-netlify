@@ -17,16 +17,20 @@
   var AceControl = createClass({
     displayName: 'AceControl',
     handleChange: function (e) {
-      /*
-      this.props.onChange(e.target.value.split(',').map(
-        function (e) {
-          return e.trim()
-        }));
-        */
+      console.log('handleChange: Who is calling it?', e);
+      debugger;
     },
 
     componentDidMount: function(){
-      console.info('componentDidMount', document.getElementById('editorDiv'))
+      console.info('componentDidMount', document.getElementById('editorDiv'));
+      var self = this;
+      var editor = ace.edit("editorDiv");
+      editor.setTheme("ace/theme/monokai");
+      editor.getSession().setMode("ace/mode/json");
+      editor.getSession().on('change', function(e){
+        console.log('ace on change', e);
+        self.props.onChange(e.value)
+      })
     },
 
     render: function () {
@@ -39,7 +43,7 @@
       var value = this.props.value || '';
       return h('pre', {}, value);
     }
-  })
+  });
 
   CMS.registerWidget('ace', AceControl, JsonPreviewControl);
 </script>
