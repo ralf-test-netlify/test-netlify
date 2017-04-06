@@ -14,6 +14,7 @@ collections:
     slug: "{{id}}-{{version}}"
     fields:
       - {label: "Id", name: "id", widget: "string"}
+      - {label: "Layout", name: "layout", widget: "hidden", default: "Video"}
       - {label: "Version", name: "version", widget: "string"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Json", name: "json", widget: "ace", default: "{}"}

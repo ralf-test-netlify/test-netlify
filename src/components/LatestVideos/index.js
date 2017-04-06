@@ -10,7 +10,6 @@ const LatestVideos = (props, {collection}) => {
   const latestVideos = enhanceCollection(collection, {
     filter: {layout: "Video"}
   })
-    .slice(0, props.numberOfPosts || defaultNumberOfPosts)
 
   return (
     <div>
@@ -20,7 +19,7 @@ const LatestVideos = (props, {collection}) => {
       <ul>
         {
           latestVideos.map(v =>
-            <li><Link to={v.__url}>{v.title}</Link></li>)
+            <li key={v.id}><Link to={v.__url}>{v.title}</Link></li>)
         }
       </ul>
     </div>
