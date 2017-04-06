@@ -11,8 +11,8 @@
 
   <style type="text/css" media="screen">
     #editorDiv {
-      width: 400px;
-      height: 400px;
+      width: 100%;
+      height: 100%;
     }
   </style>
 
@@ -35,7 +35,7 @@
       //editor.getSession().setMode("ace/mode/json");
       editor.getSession().on('change', function(e){
         console.log('ace on change', e);
-        self.props.onChange(e.value)
+        self.props.onChange(editor.getValue())
       });
     },
 
