@@ -4,7 +4,7 @@
   "description": "Netlify is a github based cms",
   "main": "index.js",
   "scripts": {
-    "copy": "copyfiles -u 1 './src/admin/*' ./dist && copyfiles -f ./src/index.html ./dist",
+    "copy": "copyfiles -u 1 './src/admin/**/*' ./dist && copyfiles -f ./src/index.html ./dist",
     "build": "npm run create-player-data && webpack && npm run copy",
     "start": "webpack-dev-server",
     "create-player-data": "node ./scripts/create-player-data.js"

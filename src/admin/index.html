@@ -7,7 +7,7 @@
   <title>Content Manager</title>
 
   <link rel='stylesheet'
-      href='https://unpkg.com/netlify-cms@^0.3/dist/cms.css'/>
+      href='./netlify/dist/cms.css'/>
 
   <style type='text/css' media='screen'>
     #editorDiv {
@@ -18,53 +18,6 @@
 
 </head>
 <body>
-<script src='https://unpkg.com/netlify-cms@^0.3/dist/cms.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js'></script>
-<script>
-  var AceControl = createClass({
-    displayName: 'AceControl',
-    handleChange: function (e) {
-      console.log('handleChange: Who is calling it?', e);
-    },
-
-    componentDidMount: function(){
-      console.info('componentDidMount', document.getElementById('editorDiv'));
-      var self = this;
-      self.editor = ace.edit('editorDiv');
-      self.editor.setTheme('ace/theme/monokai');
-      self.editor.getSession().setMode('ace/mode/json');
-      self.editor.getSession().on('change', function(e){
-        console.log('ace on change', e, self.editor.getValue());
-        self.props.onChange(self.editor.getValue())
-      });
-    },
-
-    componentDidUpdate: function(){
-      console.info('componentDidUpdate');
-      var self = this;
-      self.editor = ace.edit('editorDiv');
-      self.editor.setTheme('ace/theme/monokai');
-      self.editor.getSession().setMode('ace/mode/json');
-      self.editor.getSession().on('change', function(e){
-        console.log('ace on change', e, self.editor.getValue());
-        self.props.onChange(self.editor.getValue())
-      });
-    },
-
-    render: function () {
-      console.log('render', this.props.value)
-      var value = this.props.value || '';
-      return h('div', {id: 'editorDiv'}, value);
-    }
-  });
-  var JsonPreviewControl = createClass({
-    render: function () {
-      var value = this.props.value || '';
-      return h('pre', {}, value);
-    }
-  });
-
-  CMS.registerWidget('ace', AceControl, JsonPreviewControl);
-</script>
+<script src='./netlify/dist/cms.js'></script>
 </body>
 </html>
