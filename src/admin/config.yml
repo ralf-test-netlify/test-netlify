@@ -11,8 +11,11 @@ collections:
     label: "Json"
     folder: "_data/json"
     create: "true"
-    slug: "{{jsonId}}-{{jsonVersion}}"
+    slug: "{{id}}-{{version}}"
     fields:
+      - {label: "Id", name: "id", widget: "string"}
+      - {label: "Version", name: "version", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
       - {label: "Json", name: "json", widget: "ace", default: "{}"}
 
   - name: "video"
