@@ -31,11 +31,17 @@
 
     render: function () {
       var value = this.props.value || '';
-      return h('div', {id: 'editorDiv'});
+      return h('div', {id: 'editorDiv'}, value);
     }
   });
+  var JsonPreviewControl = createClass({
+    render: function () {
+      var value = this.props.value || '';
+      return h('pre', {}, value);
+    }
+  })
 
-  CMS.registerWidget('ace', AceControl);
+  CMS.registerWidget('ace', AceControl, JsonPreviewControl);
 </script>
 </body>
 </html>
