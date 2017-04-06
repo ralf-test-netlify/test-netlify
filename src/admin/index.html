@@ -23,12 +23,12 @@
     },
 
     componentDidMount: function(){
-      console.info('componentDidMount', this.editorDiv, document.getElementById('editorDiv'))
+      console.info('componentDidMount', document.getElementById('editorDiv'))
     },
 
     render: function () {
       var value = this.props.value || '';
-      return h('div', {id: 'editorDiv', ref:function(elem){this.editorDiv = elem}}, value);
+      return h('div', {id: 'editorDiv'}, value);
     }
   });
 
