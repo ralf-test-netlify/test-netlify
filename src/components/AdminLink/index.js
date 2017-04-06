@@ -1,5 +1,4 @@
 import React from "react"
-import {Link} from "phenomic"
 
 import styles from "./index.css"
 
@@ -10,7 +9,7 @@ const AdminLink = () => {
         { "Admin" }
       </h2>
       <ul>
-        <li><Link to="/admin/index.html">Goto CMS Admin Page</Link></li>
+        <li><a href="/admin/index.html">Goto CMS Admin Page</a></li>
       </ul>
     </div>
   )
